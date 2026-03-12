@@ -15,7 +15,7 @@
   "engines": {
     "node": ">=20.19.0"
   },
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
     "@splinetool/react-spline": "^4.1.0",
     "@splinetool/runtime": "^1.12.68",
