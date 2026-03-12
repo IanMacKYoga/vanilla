@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Plus, Zap, ArrowRight, Play, Activity, Trash2, Cpu } from 'lucide-react';
-import Spline from '@splinetool/react-spline';
+import WireframeIceCream from './WireframeIceCream';
 
 export default function Dashboard({ onCreateNew }) {
     const [workflows, setWorkflows] = useState([]);
@@ -23,7 +23,6 @@ export default function Dashboard({ onCreateNew }) {
 
     useEffect(() => {
         fetchDashboardData();
-        // Poll every 3 seconds to see live updates from the engine
         const interval = setInterval(fetchDashboardData, 3000);
         return () => clearInterval(interval);
     }, []);
@@ -44,9 +43,9 @@ export default function Dashboard({ onCreateNew }) {
 
     return (
         <div className="animate-fade-in" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-            {/* 3D Spline Header Hero */}
-            <div style={{ height: '240px', width: '100%', position: 'relative', overflow: 'hidden', background: '#f5f8fa', borderBottom: '1px solid var(--glass-border)' }}>
-                <Spline scene="https://prod.spline.design/6Wq1Q7YGyM-iab9i/scene.splinecode" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} />
+            {/* 3D Wireframe Ice Cream Hero */}
+            <div style={{ position: 'relative', overflow: 'hidden', borderBottom: '1px solid var(--glass-border)' }}>
+                <WireframeIceCream height="240px" />
                 <div style={{ position: 'absolute', bottom: '24px', left: '24px', pointerEvents: 'none' }}>
                     <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(255,255,255,0.85)', backdropFilter: 'blur(8px)', padding: '6px 12px', borderRadius: '20px', fontSize: '13px', fontWeight: 600, color: 'var(--accent-teal)', marginBottom: '8px' }}>
                         <Cpu size={14} /> AI Engine Online

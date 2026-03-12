@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowLeft, Box, Check, ChevronRight, Zap, Play, Radio, Youtube, MessageSquare } from 'lucide-react';
-import Spline from '@splinetool/react-spline';
+import WireframeIceCream from './WireframeIceCream';
 
 export default function WorkflowBuilder({ onCancel, onSave }) {
     const [step, setStep] = useState(1);
@@ -53,8 +53,7 @@ export default function WorkflowBuilder({ onCancel, onSave }) {
                 display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'
             }}>
                 <div style={{ width: '400px', height: '400px', position: 'relative' }}>
-                    {/* Placeholder for "Vanilla Bean Dissolving". Using a fluid morphing sphere URL */}
-                    <Spline scene="https://prod.spline.design/qWcqN3eJ1t2N7W4K/scene.splinecode" />
+                    <WireframeIceCream width="100%" height="100%" />
                 </div>
                 <h2 style={{ marginTop: '20px', color: 'var(--text-primary)', fontSize: '24px', fontWeight: 600 }}>Building your Hook...</h2>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '15px', marginTop: '8px' }}>The Vanilla Engine is wiring the modules.</p>
