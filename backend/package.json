@@ -11,6 +11,9 @@
   "author": "",
   "license": "ISC",
   "type": "commonjs",
+  "engines": {
+    "node": ">=20.19.0"
+  },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.78.0",
     "axios": "^1.13.6",
