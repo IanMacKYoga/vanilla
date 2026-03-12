@@ -1,4 +1,5 @@
-require('dotenv').config({ path: require('path').resolve(__dirname, '../.env') });
+// Load .env locally; Railway injects env vars directly
+try { require('dotenv').config(); } catch (e) { /* dotenv optional on Railway */ }
 const express = require('express');
 const cors = require('cors');
 const { pool, initDb } = require('./db');
