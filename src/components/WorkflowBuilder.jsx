@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowLeft, Box, Check, ChevronRight, Zap, Play, Radio, Youtube, MessageSquare } from 'lucide-react';
+import Spline from '@splinetool/react-spline';
 import WireframeIceCream from './WireframeIceCream';
 
 export default function WorkflowBuilder({ onCancel, onSave }) {
@@ -36,9 +37,8 @@ export default function WorkflowBuilder({ onCancel, onSave }) {
                     active: true
                 })
             });
-            // Keep the animation visible for at least 3 seconds so the user can enjoy the 3D scene
             setTimeout(() => {
-                onSave(); // return to dashboard
+                onSave();
             }, 3000);
         } catch (err) {
             console.error('Failed to create workflow', err);
@@ -52,7 +52,9 @@ export default function WorkflowBuilder({ onCancel, onSave }) {
                 position: 'fixed', inset: 0, backgroundColor: 'var(--bg-primary)', zIndex: 100,
                 display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'
             }}>
-                <div style={{ width: '400px', height: '400px', position: 'relative' }}>
+                {/* Spline subtle background */}
+                <Spline scene="https://prod.spline.design/qWcqN3eJ1t2N7W4K/scene.splinecode" style={{ position: 'absolute', inset: 0, opacity: 0.2, zIndex: 0 }} />
+                <div style={{ width: '400px', height: '400px', position: 'relative', zIndex: 1 }}>
                     <WireframeIceCream width="100%" height="100%" />
                 </div>
                 <h2 style={{ marginTop: '20px', color: 'var(--text-primary)', fontSize: '24px', fontWeight: 600 }}>Building your Hook...</h2>
