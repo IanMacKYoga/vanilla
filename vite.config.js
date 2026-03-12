@@ -10,6 +10,9 @@ export default defineConfig({
             devOptions: {
                 enabled: true
             },
+            workbox: {
+                maximumFileSizeToCacheInBytes: 5000000 // 5 MB
+            },
             manifest: {
                 name: 'Vanilla Hooks',
                 short_name: 'Vanilla',
